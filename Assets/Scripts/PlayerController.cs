@@ -4,7 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     private float speed = 7.0f;
     public int health;
-    private float invincibilityTimer = 0f;
+    private float invincibilityClock = 0f;
+    public float invincibilityTime = 1f;
     public GameObject bullet;
     private float shootCooldown;
 
@@ -45,17 +46,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // enemy damage detection
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            if (invincibilityTimer < Time.time)
+            if (invincibilityClock < Time.time)
             {
                 health -= 1;
-                invincibilityTimer = Time.time + 1;
+                invincibilityClock = Time.time + invincibilityTime;
             }
         }
-        
     }
 
 }

@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehavior
   target: {fileID: 0}
   player: {fileID: 0}
+  health: 3
 --- !u!50 &6835520379749369872
 Rigidbody2D:
   serializedVersion: 5

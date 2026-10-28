@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
@@ -7,6 +9,9 @@ public class EnemyBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private float speed = 3f;
+    public float health;
+    private float enemyInvincibilityClock = 0f;
+    public float enemyInvincibilityTime = 0.01f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +28,10 @@ public class EnemyBehavior : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         direction.Normalize();
         movement = direction;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate() {
@@ -32,5 +41,14 @@ public class EnemyBehavior : MonoBehaviour
     void moveEnemy(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Projectile"))
+        {
+            health -= collision.GetComponent<ProjectileBehaviour>().damage;
+            Debug.Log("damage!" + Time.time.ToString());
+        }
     }
 }

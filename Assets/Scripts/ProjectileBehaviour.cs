@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
-    public float projectileSpeed = 10f;
+    public float projectileSpeed;
+    public float damage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,5 +18,13 @@ public class ProjectileBehaviour : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.up * Time.deltaTime * projectileSpeed);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

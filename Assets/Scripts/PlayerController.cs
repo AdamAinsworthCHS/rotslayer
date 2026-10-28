@@ -3,10 +3,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private float speed = 7.0f;
+    public int health;
+    private float invincibilityTimer = 0f;
+    public GameObject bullet;
+    private float shootCooldown;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        health = 6;
     }
 
     // Update is called once per frame
@@ -28,6 +33,29 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Vector2.right * Time.deltaTime * speed);
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (shootCooldown < Time.time)
+            {
+                GameObject clone = Instantiate(bullet, transform.position, transform.rotation);
+                shootCooldown = Time.time + 0.2f;
+            }
+            
+        }
     }
-    
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            if (invincibilityTimer < Time.time)
+            {
+                health -= 1;
+                invincibilityTimer = Time.time + 1;
+            }
+        }
+        
+    }
+
 }

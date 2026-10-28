@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    private RoomManager roomManager;
     public Transform target;
     public GameObject player;
     private Rigidbody2D rb;
@@ -19,6 +20,8 @@ public class EnemyBehavior : MonoBehaviour
         player = GameObject.Find("Player");
         target = player.transform;
         rb = this.GetComponent<Rigidbody2D>();
+        roomManager = GameObject.Find("RoomManager").GetComponent<RoomManager>();
+        roomManager.currentEnemies.Add(gameObject);
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class EnemyBehavior : MonoBehaviour
         movement = direction;
         if (health <= 0)
         {
+            roomManager.currentEnemies.Remove(gameObject);
             Destroy(gameObject);
         }
         if (GetComponent<SpriteRenderer>().color == Color.crimson)
@@ -55,7 +59,6 @@ public class EnemyBehavior : MonoBehaviour
         if (collision.CompareTag("Projectile"))
         {
             health -= collision.GetComponent<ProjectileBehaviour>().damage;
-            Debug.Log("damage!" + Time.time.ToString());
             GetComponent<SpriteRenderer>().color = Color.crimson;
             flashClock = Time.time + flashTime;
         }

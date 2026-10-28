@@ -4,15 +4,24 @@ public class PlayerController : MonoBehaviour
 {
     private float speed = 7.0f;
     public int health;
+    public int maxHealth;
+    public int ammo;
+    public int maxAmmo;
+    public GameObject bullet;
+
+    // clocks
     private float invincibilityClock = 0f;
     public float invincibilityTime = 1f;
-    public GameObject bullet;
-    private float shootCooldown;
+    private float fireClock;
+    public float fireDelay;
+    private float reloadClock;
+    public float reloadDelay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        health = 6;
+        health = maxHealth;
+        ammo = maxAmmo;
     }
 
     // Update is called once per frame
@@ -47,14 +56,30 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // shooting mechanic
         if (Input.GetMouseButtonDown(0))
         {
-            if (shootCooldown < Time.time)
+            reloadClock = Time.time + reloadDelay;
+            if (fireClock < Time.time)
             {
-                GameObject clone = Instantiate(bullet, transform.position, transform.rotation);
-                shootCooldown = Time.time + 0.2f;
+                fireClock = Time.time + fireDelay;
+                if (ammo > 0)
+                {
+                    GameObject clone = Instantiate(bullet, transform.position, transform.rotation);
+                    ammo -= 1;
+                }
             }
             
+        }
+
+        // passive reloading
+        if (reloadClock < Time.time)
+        {
+            if (ammo < maxAmmo)
+            {
+                ammo += 1;
+                reloadClock = Time.time + reloadDelay;
+            }
         }
 
         // invincibility flash color checker

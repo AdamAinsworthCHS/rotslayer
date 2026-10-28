@@ -10,8 +10,8 @@ public class EnemyBehavior : MonoBehaviour
     private Vector2 movement;
     private float speed = 3f;
     public float health;
-    private float enemyInvincibilityClock = 0f;
-    public float enemyInvincibilityTime = 0.01f;
+    private float flashClock = 0f;
+    public float flashTime = 0.1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +32,13 @@ public class EnemyBehavior : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (GetComponent<SpriteRenderer>().color == Color.crimson)
+        {
+            if (flashClock < Time.time)
+            {
+                GetComponent<SpriteRenderer>().color = Color.red;
+            }
+        }
     }
 
     private void FixedUpdate() {
@@ -49,6 +56,8 @@ public class EnemyBehavior : MonoBehaviour
         {
             health -= collision.GetComponent<ProjectileBehaviour>().damage;
             Debug.Log("damage!" + Time.time.ToString());
+            GetComponent<SpriteRenderer>().color = Color.crimson;
+            flashClock = Time.time + flashTime;
         }
     }
 }

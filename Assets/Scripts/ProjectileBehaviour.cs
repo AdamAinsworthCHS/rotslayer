@@ -18,6 +18,15 @@ public class ProjectileBehaviour : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.up * Time.deltaTime * projectileSpeed);
+
+        if (transform.position.x > 12 || transform.position.x < -12)
+        {
+            Destroy(gameObject);
+        }
+        if (transform.position.y > 12 || transform.position.y < -12)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)

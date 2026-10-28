@@ -20,19 +20,31 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey("w"))
         {
-            transform.Translate(Vector2.up * Time.deltaTime * speed);
+            if (transform.position.y < 4)
+            {
+                transform.Translate(Vector2.up * Time.deltaTime * speed);
+            }
         }
         if (Input.GetKey("a"))
         {
-            transform.Translate(Vector2.left * Time.deltaTime * speed);
+            if (transform.position.x > -9.5)
+            {
+                transform.Translate(Vector2.left * Time.deltaTime * speed);
+            }
         }
         if (Input.GetKey("s"))
         {
-            transform.Translate(Vector2.down * Time.deltaTime * speed);
+            if (transform.position.y > -4)
+            {
+                transform.Translate(Vector2.down * Time.deltaTime * speed);
+            }
         }
         if (Input.GetKey("d"))
         {
-            transform.Translate(Vector2.right * Time.deltaTime * speed);
+            if (transform.position.x < 9.5)
+            {
+                transform.Translate(Vector2.right * Time.deltaTime * speed);
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -43,6 +55,15 @@ public class PlayerController : MonoBehaviour
                 shootCooldown = Time.time + 0.2f;
             }
             
+        }
+
+        // invincibility flash color checker
+        if (GetComponent<SpriteRenderer>().color == Color.lightCyan)
+        {
+            if (invincibilityClock < Time.time)
+            {
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
     }
 
@@ -55,6 +76,7 @@ public class PlayerController : MonoBehaviour
             {
                 health -= 1;
                 invincibilityClock = Time.time + invincibilityTime;
+                GetComponent<SpriteRenderer>().color = Color.lightCyan;
             }
         }
     }

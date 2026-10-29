@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -70,6 +71,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
             
+        }
+
+        // death
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("TitleScreen");
         }
 
         // passive reloading

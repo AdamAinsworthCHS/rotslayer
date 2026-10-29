@@ -1313,6 +1313,9 @@ MonoBehaviour:
   rooms:
   - {fileID: 3238390915992011914, guid: a4af1fd79fe953949b28b7be214616a4, type: 3}
   - {fileID: 3238390915992011914, guid: 04ecdf1af79a8ca48bd227da6ff55158, type: 3}
+  - {fileID: 3238390915992011914, guid: 25be8c33cd154df498b0dd94b1d10607, type: 3}
+  - {fileID: 3238390915992011914, guid: b7125a76deec60f4e8a2bf17ffa9ae42, type: 3}
+  - {fileID: 3238390915992011914, guid: b3c2d6326d8942d4c8f2789d90fadde5, type: 3}
   - {fileID: 3238390915992011914, guid: b8fbcf44ce134474ea9286ab849221da, type: 3}
   position: 0
   combat: 0

@@ -44,10 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b785918868f7f4a8e6c3bd4d8ae53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room
-  cleared: 0
+  cleared: 1
   enemies:
   - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
   - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
   enemyPositions:
-  - {x: -6.341676, y: 2.723019}
-  - {x: -6.089342, y: -0.7495781}
+  - {x: 1, y: 3}
+  - {x: 1, y: -3}
+  objects: []
+  objectPositions: []

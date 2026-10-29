@@ -48,6 +48,12 @@ MonoBehaviour:
   enemies:
   - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
   - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
+  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
+  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
   enemyPositions:
-  - {x: -6.341676, y: 2.723019}
-  - {x: -6.089342, y: -0.7495781}
+  - {x: 1, y: 3}
+  - {x: 4, y: 2}
+  - {x: 4, y: -2}
+  - {x: 4, y: 3}
+  objects: []
+  objectPositions: []

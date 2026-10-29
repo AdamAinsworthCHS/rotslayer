@@ -39,5 +39,10 @@ public class RoomManager : MonoBehaviour
             }
             combat = true;
         }
+        
+        for (int i = 0; i < rooms[position].objects.Count; i++)
+        {
+            GameObject clone = Instantiate(rooms[position].objects[i], rooms[position].objectPositions[i], transform.rotation);
+        }
     }
 }

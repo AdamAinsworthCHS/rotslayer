@@ -6,6 +6,8 @@ public class Room : MonoBehaviour
     public bool cleared = false;
     public List<GameObject> enemies;
     public List<Vector2> enemyPositions;
+    public List<GameObject> objects;
+    public List<Vector2> objectPositions;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

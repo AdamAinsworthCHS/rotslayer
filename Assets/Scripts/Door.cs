@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,6 +9,7 @@ public class Door : MonoBehaviour
     private RoomManager roomManager;
     public Vector2 startPos;
     public Vector2 endPos;
+    public GameObject[] currentObjects;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +34,7 @@ public class Door : MonoBehaviour
                     {
                         roomManager.position -= 1;
                         collision.transform.position = endPos;
+                        ClearObjects();
                         roomManager.InitiateRoom();
                     }
                 }
@@ -40,10 +44,20 @@ public class Door : MonoBehaviour
                     {
                         roomManager.position += 1;
                         collision.transform.position = startPos;
+                        ClearObjects();
                         roomManager.InitiateRoom();
                     }
                 }
             }
+        }
+    }
+
+    void ClearObjects()
+    {
+        currentObjects = GameObject.FindGameObjectsWithTag("Object");
+        for (int i = 0; i < currentObjects.Length; i++)
+        {
+            Destroy(currentObjects[i]);
         }
     }
 }

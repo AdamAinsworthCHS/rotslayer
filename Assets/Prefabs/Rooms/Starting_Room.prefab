@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b785918868f7f4a8e6c3bd4d8ae53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room
-  cleared: 0
+  cleared: 1
   enemies: []
   enemyPositions: []
+  objects:
+  - {fileID: 5601077732606106240, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+  objectPositions:
+  - {x: 0, y: 0}

@@ -269,6 +269,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44210c6449185194c97fcca0f26b0509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthText
+--- !u!1001 &82420705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106169489649829086, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601077732606106240, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
+      propertyPath: m_Name
+      value: TutorialDrawing
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 471251511b5b392468f9d6ecf0cd34ac, type: 3}
 --- !u!1 &144155735
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +836,7 @@ MonoBehaviour:
   doorID: Entrance
   startPos: {x: -9, y: 0}
   endPos: {x: 9, y: 0}
+  currentObjects: []
 --- !u!61 &571411867
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1255,6 +1313,7 @@ MonoBehaviour:
   rooms:
   - {fileID: 3238390915992011914, guid: a4af1fd79fe953949b28b7be214616a4, type: 3}
   - {fileID: 3238390915992011914, guid: 04ecdf1af79a8ca48bd227da6ff55158, type: 3}
+  - {fileID: 3238390915992011914, guid: b8fbcf44ce134474ea9286ab849221da, type: 3}
   position: 0
   combat: 0
   currentEnemies: []
@@ -1611,6 +1670,7 @@ MonoBehaviour:
   doorID: Exit
   startPos: {x: -9, y: 0}
   endPos: {x: 9, y: 0}
+  currentObjects: []
 --- !u!61 &1616461271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1850,3 +1910,4 @@ SceneRoots:
   - {fileID: 995827800}
   - {fileID: 571411865}
   - {fileID: 1616461269}
+  - {fileID: 82420705}

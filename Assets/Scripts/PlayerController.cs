@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey("a"))
         {
-            if (transform.position.x > -9.5)
+            if (transform.position.x > -7.89)
             {
                 transform.Translate(Vector2.left * Time.deltaTime * speed);
             }
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey("d"))
         {
-            if (transform.position.x < 9.5)
+            if (transform.position.x < 7.89)
             {
                 transform.Translate(Vector2.right * Time.deltaTime * speed);
             }

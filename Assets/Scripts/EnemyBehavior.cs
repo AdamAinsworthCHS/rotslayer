@@ -36,11 +36,11 @@ public class EnemyBehavior : MonoBehaviour
             roomManager.currentEnemies.Remove(gameObject);
             Destroy(gameObject);
         }
-        if (GetComponent<SpriteRenderer>().color == Color.crimson)
+        if (GetComponent<SpriteRenderer>().color == Color.red)
         {
             if (flashClock < Time.time)
             {
-                GetComponent<SpriteRenderer>().color = Color.red;
+                GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
     }
@@ -59,7 +59,7 @@ public class EnemyBehavior : MonoBehaviour
         if (collision.CompareTag("Projectile"))
         {
             health -= collision.GetComponent<ProjectileBehaviour>().damage;
-            GetComponent<SpriteRenderer>().color = Color.crimson;
+            GetComponent<SpriteRenderer>().color = Color.red;
             flashClock = Time.time + flashTime;
         }
     }

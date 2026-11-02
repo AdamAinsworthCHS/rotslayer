@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public int ammo;
     public int maxAmmo;
     public GameObject bullet;
+    private Animator playerAnimator;
 
     // clocks
     private float invincibilityClock = 0f;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         health = maxHealth;
         ammo = maxAmmo;
+        playerAnimator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
             if (transform.position.y > -4)
             {
                 transform.Translate(Vector2.down * Time.deltaTime * speed);
+                playerAnimator.SetInteger("direction", 0);
             }
         }
         if (Input.GetKey("d"))
@@ -55,6 +58,15 @@ public class PlayerController : MonoBehaviour
             {
                 transform.Translate(Vector2.right * Time.deltaTime * speed);
             }
+        }
+
+        if (Input.GetKey("w") == false && Input.GetKey("a") == false && Input.GetKey("s") == false && Input.GetKey("d") == false)
+        {
+            playerAnimator.SetBool("isMoving", false);
+        }
+        else
+        {
+            playerAnimator.SetBool("isMoving", true);
         }
 
         // shooting mechanic
@@ -90,7 +102,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // invincibility flash color checker
-        if (GetComponent<SpriteRenderer>().color == Color.lightCyan)
+        if (GetComponent<SpriteRenderer>().color == Color.red)
         {
             if (invincibilityClock < Time.time)
             {
@@ -108,7 +120,7 @@ public class PlayerController : MonoBehaviour
             {
                 health -= 1;
                 invincibilityClock = Time.time + invincibilityTime;
-                GetComponent<SpriteRenderer>().color = Color.lightCyan;
+                GetComponent<SpriteRenderer>().color = Color.red;
             }
         }
     }

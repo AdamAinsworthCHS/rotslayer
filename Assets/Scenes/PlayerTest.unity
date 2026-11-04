@@ -1271,6 +1271,7 @@ MonoBehaviour:
   floor3BossRoomsIndex: []
   floor4CombatRoomsIndex: []
   floor4BossRoomsIndex: []
+  randomItem: {fileID: 3377839355051805734, guid: fd3cd1b5208dabb40a870ad923a5495b, type: 3}
 --- !u!1 &1046889223
 GameObject:
   m_ObjectHideFlags: 0

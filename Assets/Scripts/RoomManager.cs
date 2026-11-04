@@ -25,6 +25,7 @@ public class RoomManager : MonoBehaviour
     public List<Room> floor3BossRoomsIndex;
     public List<Room> floor4CombatRoomsIndex;
     public List<Room> floor4BossRoomsIndex;
+    public GameObject randomItem;
     private int roomNumber; // int used to select rooms
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -166,6 +167,10 @@ public class RoomManager : MonoBehaviour
                 }
                 else
                 {
+                    if (combat != false)
+                    {
+                        Instantiate(randomItem, transform.position, transform.rotation);
+                    }
                     combat = false;
                     rooms[position].cleared = true;
                 }

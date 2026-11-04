@@ -46,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomItem
   itemIndex:
   - {fileID: 3942478009663079485, guid: d8664e6ee0d764242bbe74662b552424, type: 3}
-  - {fileID: 3942478009663079485, guid: 4a062f41380b571488ad59d7b6059695, type: 3}
-  - {fileID: 3942478009663079485, guid: f19c63b221c14444daab968f88252291, type: 3}
-  obtainableItems: []
+  - {fileID: 3942478009663079485, guid: 768bfbaf4fb5e2f40b066baed52e40df, type: 3}
+  - {fileID: 3942478009663079485, guid: c95eaa03e9e73bd4cb68c86de9bee829, type: 3}
+  - {fileID: 3942478009663079485, guid: 9dbef35e5261c59429552b80c9bbef93, type: 3}
+  - {fileID: 3942478009663079485, guid: 0020d0893dacaec41b53b2ee48455489, type: 3}
+  - {fileID: 3942478009663079485, guid: 0d0d006438c256f4da6273d812eac962, type: 3}
+  - {fileID: 3942478009663079485, guid: 67a7bad56ca97734688efbff95e126d5, type: 3}
+  - {fileID: 3942478009663079485, guid: b135db775b0be5d40af50cf3a87312bd, type: 3}

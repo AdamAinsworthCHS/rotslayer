@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1017209297672849836}
   - component: {fileID: -2747607779717929982}
   m_Layer: 0
-  m_Name: ArcaneMushroom 1
+  m_Name: SuperCylinder
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8930674782851267837, guid: a228deb73727e694aadf3dd44081e315, type: 3}
+  m_Sprite: {fileID: 6740559974350214113, guid: 77819199c259aca40888c45249ed6f78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,15 +106,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef763603ae97c8149ad68d72f89f58e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  healthBonus: 1
+  healthBonus: 0
   ammoBonus: 4
-  speedBonus: 1
-  fireRateBonus: 0.3
-  reloadBonus: 0.3
+  speedBonus: 0
+  fireRateBonus: 0
+  reloadBonus: 0
   specialAbility: 
-  itemName: Arcane Mushroom
-  itemDescription: All stats up!
-  itemSprite: {fileID: 8930674782851267837, guid: a228deb73727e694aadf3dd44081e315, type: 3}
+  itemName: Super Cylinder
+  itemDescription: Ammo capacity up!
+  itemSprite: {fileID: 6740559974350214113, guid: 77819199c259aca40888c45249ed6f78, type: 3}
   collected: 0
   decayed: 0
 --- !u!61 &-2747607779717929982
@@ -155,7 +155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.47916666, y: 0.5625}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

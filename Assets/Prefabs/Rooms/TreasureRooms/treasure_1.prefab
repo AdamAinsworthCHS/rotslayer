@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6449273929327431524}
   - component: {fileID: 3238390915992011914}
   m_Layer: 0
-  m_Name: Room_2
+  m_Name: treasure_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,15 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room
   cleared: 0
-  enemies:
-  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
-  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
-  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
-  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
-  enemyPositions:
-  - {x: 1, y: 3}
-  - {x: 4, y: 2}
-  - {x: 4, y: -2}
-  - {x: 4, y: 3}
-  objects: []
-  objectPositions: []
+  treasureTaken: 0
+  enemies: []
+  enemyPositions: []
+  objects:
+  - {fileID: 3377839355051805734, guid: fd3cd1b5208dabb40a870ad923a5495b, type: 3}
+  objectPositions:
+  - {x: 0, y: 0}
+  roomType: 

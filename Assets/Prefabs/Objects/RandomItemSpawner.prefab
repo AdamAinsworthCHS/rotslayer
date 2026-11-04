@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomItem
   itemIndex:
   - {fileID: 3942478009663079485, guid: d8664e6ee0d764242bbe74662b552424, type: 3}
+  - {fileID: 3942478009663079485, guid: 4a062f41380b571488ad59d7b6059695, type: 3}
+  - {fileID: 3942478009663079485, guid: f19c63b221c14444daab968f88252291, type: 3}
+  obtainableItems: []

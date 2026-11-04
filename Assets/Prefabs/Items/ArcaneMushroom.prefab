@@ -115,6 +115,8 @@ MonoBehaviour:
   itemName: Arcane Mushroom
   itemDescription: All stats up!
   itemSprite: {fileID: 8930674782851267837, guid: a228deb73727e694aadf3dd44081e315, type: 3}
+  collected: 0
+  decayed: 0
 --- !u!61 &-2747607779717929982
 BoxCollider2D:
   m_ObjectHideFlags: 0

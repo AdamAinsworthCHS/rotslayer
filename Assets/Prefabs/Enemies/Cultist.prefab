@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehavior
   target: {fileID: 0}
   player: {fileID: 0}
+  speed: 2.8
   health: 3
   flashTime: 0.1
 --- !u!50 &6835520379749369872

@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room
   cleared: 0
+  treasureTaken: 0
   enemies:
-  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
-  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
+  - {fileID: 5010767923384748841, guid: acc035726ce9ef34aa8e17f983af49a7, type: 3}
+  - {fileID: 5010767923384748841, guid: acc035726ce9ef34aa8e17f983af49a7, type: 3}
   - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
   - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
   enemyPositions:
@@ -57,3 +58,10 @@ MonoBehaviour:
   - {x: 4, y: 3}
   objects: []
   objectPositions: []
+  roomType: 
+  wave1: []
+  wave1Pos: []
+  wave2: []
+  wave2Pos: []
+  wave3: []
+  wave3Pos: []

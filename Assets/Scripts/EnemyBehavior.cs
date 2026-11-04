@@ -9,7 +9,7 @@ public class EnemyBehavior : MonoBehaviour
     public GameObject player;
     private Rigidbody2D rb;
     private Vector2 movement;
-    private float speed = 3f;
+    public float speed = 3f;
     public float health;
     private float flashClock = 0f;
     public float flashTime = 0.1f;

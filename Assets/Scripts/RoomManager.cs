@@ -8,6 +8,7 @@ public class RoomManager : MonoBehaviour
     public int position;
     public bool combat;
     public List<GameObject> currentEnemies;
+    public int bossWave;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,8 +25,36 @@ public class RoomManager : MonoBehaviour
     {
         if (currentEnemies.Count <= 0)
         {
-            combat = false;
-            rooms[position].cleared = true;
+            if (rooms[position].roomType == "Boss")
+            {
+                if (bossWave == 1)
+                {
+                    for (int i = 0; i < rooms[position].wave2.Count; i++)
+                    {
+                        GameObject clone = Instantiate(rooms[position].wave2[i], rooms[position].wave2Pos[i], transform.rotation);
+                    }
+                    bossWave += 1;
+                }
+                else if (bossWave == 2)
+                {
+                    for (int i = 0; i < rooms[position].wave3.Count; i++)
+                    {
+                        GameObject clone = Instantiate(rooms[position].wave3[i], rooms[position].wave3Pos[i], transform.rotation);
+                    }
+                    bossWave += 1;
+                }
+                else
+                {
+                    combat = false;
+                    rooms[position].cleared = true;
+                }
+                
+            }
+            else
+            {
+                combat = false;
+                rooms[position].cleared = true;
+            }
         }
     }
 
@@ -34,11 +63,24 @@ public class RoomManager : MonoBehaviour
     {
         if (rooms[position].cleared == false)
         {
-            for (int i = 0; i < rooms[position].enemies.Count; i++)
+            if (rooms[position].roomType == "Boss")
             {
-                GameObject clone = Instantiate(rooms[position].enemies[i], rooms[position].enemyPositions[i], transform.rotation);
+                bossWave = 1;
+                for (int i = 0; i < rooms[position].wave1.Count; i++)
+                {
+                    GameObject clone = Instantiate(rooms[position].wave1[i], rooms[position].wave1Pos[i], transform.rotation);
+                }
+                combat = true;
             }
-            combat = true;
+            else
+            {
+                for (int i = 0; i < rooms[position].enemies.Count; i++)
+                {
+                    GameObject clone = Instantiate(rooms[position].enemies[i], rooms[position].enemyPositions[i], transform.rotation);
+                }
+                combat = true;
+            }
+            
         }
         
         for (int i = 0; i < rooms[position].objects.Count; i++)

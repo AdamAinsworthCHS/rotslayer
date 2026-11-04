@@ -25,7 +25,14 @@ public class ItemButton : MonoBehaviour
         }
         else
         {
-            this.GetComponent<Image>().color = Color.white;
+            if (itemStored.decayed == true)
+            {
+                this.GetComponent<Image>().color = Color.darkCyan;
+            }
+            else
+            {
+                this.GetComponent<Image>().color = Color.white;
+            }
         }
     }
 
@@ -35,7 +42,6 @@ public class ItemButton : MonoBehaviour
         {
             itemPicker.pickedItems.Remove(itemStored);
             itemPicker.pickedButtonIDs.Remove(buttonID);
-            Debug.Log("added to lsit!");
         }
         else
         {
@@ -43,7 +49,6 @@ public class ItemButton : MonoBehaviour
             {
                 itemPicker.pickedItems.Add(itemStored);
                 itemPicker.pickedButtonIDs.Add(buttonID);
-                Debug.Log("removed from lsit!");
             }
         }
         

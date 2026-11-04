@@ -12,6 +12,7 @@ public class ItemManager : MonoBehaviour
     public float totalFireRateBonus;
     public float totalReloadBonus;
     public List<string> currentSpecialAbilities;
+    public GameObject[] itemsInRoom;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -61,5 +62,42 @@ public class ItemManager : MonoBehaviour
             this.gameObject.GetComponent<PlayerController>().health += newItem.healthBonus;
         }
         this.gameObject.GetComponent<PlayerController>().RecalculateStats();
+    }
+
+    public void ItemSetup()
+    {
+        currentItems.Clear();
+        itemsInRoom = GameObject.FindGameObjectsWithTag("Item");
+        for (int i = 0; i < itemsInRoom.Length; i++)
+        {
+            if (itemsInRoom[i].GetComponent<Item>().collected == true)
+            {
+                currentItems.Add(itemsInRoom[i].GetComponent<Item>());
+            }
+        }
+
+        // resetting all item bonuses
+        totalHealthBonus = 0;
+        totalAmmoBonus = 0;
+        totalSpeedBonus = 0;
+        totalFireRateBonus = 0;
+        totalReloadBonus = 0;
+        currentSpecialAbilities.Clear();
+
+
+
+        for (int i = 0; i < currentItems.Count; i++)
+        {
+            // re-calculating current bonuses
+            totalHealthBonus += currentItems[i].healthBonus;
+            totalAmmoBonus += currentItems[i].ammoBonus;
+            totalSpeedBonus += currentItems[i].speedBonus;
+            totalFireRateBonus += currentItems[i].fireRateBonus;
+            totalReloadBonus += currentItems[i].reloadBonus;
+            if (currentItems[i].specialAbility != null)
+            {
+                currentSpecialAbilities.Add(currentItems[i].specialAbility);
+            }
+        }
     }
 }

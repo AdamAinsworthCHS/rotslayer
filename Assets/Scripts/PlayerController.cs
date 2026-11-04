@@ -12,11 +12,12 @@ public class PlayerController : MonoBehaviour
     public int maxAmmo;
     public float fireDelay;
     public float reloadDelay;
+    public int floor;
 
     [Header("Components and Objects")]
     public GameObject bullet;
-    private Animator playerAnimator;
-    private ItemManager itemManager;
+    public Animator playerAnimator;
+    public ItemManager itemManager;
 
     // clocks
     private float invincibilityClock = 0f;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         reloadDelay = baseReloadDelay / ( 1 +itemManager.totalReloadBonus);
 
         ammo = maxAmmo;
+        floor = 0;
     }
 
     // Update is called once per frame
@@ -146,6 +148,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Setup()
+    {
+        playerAnimator = this.GetComponent<Animator>();
+        itemManager = this.GetComponent<ItemManager>();
+
+        maxHealth = baseMaxHealth + itemManager.totalHealthBonus;
+        maxAmmo = baseMaxAmmo + itemManager.totalAmmoBonus;
+        speed = baseSpeed + itemManager.totalSpeedBonus;
+        fireDelay = baseFireDelay / ( 1 + itemManager.totalFireRateBonus);
+        reloadDelay = baseReloadDelay / ( 1 +itemManager.totalReloadBonus);
+
+        ammo = maxAmmo;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
+
     public void RecalculateStats()
     {
         maxHealth = baseMaxHealth + itemManager.totalHealthBonus;
@@ -154,7 +174,10 @@ public class PlayerController : MonoBehaviour
         fireDelay = baseFireDelay / ( 1 + itemManager.totalFireRateBonus);
         reloadDelay = baseReloadDelay / ( 1 +itemManager.totalReloadBonus);
 
-        // health += itemManager.totalHealthBonus;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
     }
 
 }

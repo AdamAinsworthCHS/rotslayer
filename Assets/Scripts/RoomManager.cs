@@ -23,11 +23,16 @@ public class RoomManager : MonoBehaviour
             {
                 if (players[i].GetComponent<ItemManager>().currentItems.Count == 0)
                 {
-                    Destroy(players[i]);
+                    if (players[i].GetComponent<PlayerController>().floor == 0)
+                    {
+                        Destroy(players[i]);
+                    }
                 }
             }
         }
         players[0].transform.position = transform.position;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<ItemManager>().ItemSetup();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Setup();
 
         combat = false;
         for (int i = 0; i < rooms.Count; i++)

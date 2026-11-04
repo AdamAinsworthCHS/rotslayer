@@ -19,8 +19,11 @@ public class ItemPicker : MonoBehaviour
         int row = 0;
         int col = 0;
 
+        Debug.Log(itemManager.currentItems.Count);
+
         for (int i = 0; i < itemManager.currentItems.Count; i++)
         {
+            Debug.Log("made button " + i);
             // clone the prefab
             GameObject clone = Instantiate(buttonPrefab, transform.position, transform.rotation);
             // set the parent

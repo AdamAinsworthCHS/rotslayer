@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
 
     [Header("Misc")]
     public bool collected;
+    public bool decayed;
     
     
     private float itemTextClock;
@@ -36,6 +37,7 @@ public class Item : MonoBehaviour
         roomManager = GameObject.Find("RoomManager").GetComponent<RoomManager>();
         textShown = false;
         collected = false;
+        decayed = false;
     }
 
     // Update is called once per frame

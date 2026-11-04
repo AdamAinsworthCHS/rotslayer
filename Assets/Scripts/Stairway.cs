@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class Stairway : MonoBehaviour
 {
     private RoomManager roomManager;
+    public Sprite closedSprite;
+    public Sprite openSprite;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,7 +15,14 @@ public class Stairway : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (roomManager.combat == false)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = openSprite;
+        }
+        else
+        {
+            this.GetComponent<SpriteRenderer>().sprite = closedSprite;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)

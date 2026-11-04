@@ -1254,7 +1254,8 @@ MonoBehaviour:
   blankPlayer: {fileID: 380659710468163498, guid: 91aa97ffe23cff3458128c015faff785, type: 3}
   treasureRoomsIndex:
   - {fileID: 3238390915992011914, guid: 04ecdf1af79a8ca48bd227da6ff55158, type: 3}
-  specialRoomsIndex: []
+  specialRoomsIndex:
+  - {fileID: 3238390915992011914, guid: 990db8c2a6a93bf48b5291cc8863befe, type: 3}
   miscRoomsIndex:
   - {fileID: 3238390915992011914, guid: a4af1fd79fe953949b28b7be214616a4, type: 3}
   - {fileID: 3238390915992011914, guid: b8fbcf44ce134474ea9286ab849221da, type: 3}

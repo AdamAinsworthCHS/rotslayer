@@ -130,6 +130,7 @@ public class RoomManager : MonoBehaviour
             }
             AddSpecialRoom();
             AddBossRoom();
+            rooms.Add(miscRoomsIndex[1]);
         }
 
         combat = false;
@@ -222,13 +223,13 @@ public class RoomManager : MonoBehaviour
     void AddTreasureRoom()
     {
         roomNumber = Random.Range(0, treasureRoomsIndex.Count);
-        rooms.Add(treasureRoomsIndex[roomNumber]);
+        rooms.Add(Instantiate(treasureRoomsIndex[roomNumber]));
     }
 
     void AddSpecialRoom()
     {
         roomNumber = Random.Range(0, specialRoomsIndex.Count);
-        rooms.Add(specialRoomsIndex[roomNumber]);
+        rooms.Add(Instantiate(specialRoomsIndex[roomNumber]));
     }
 
     void AddCombatRoom()
@@ -236,22 +237,22 @@ public class RoomManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 0)
         {
             roomNumber = Random.Range(0, floor1CombatRoomsIndex.Count);
-            rooms.Add(floor1CombatRoomsIndex[roomNumber]);
+            rooms.Add(Instantiate(floor1CombatRoomsIndex[roomNumber]));
         }
         else if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 1)
         {
             roomNumber = Random.Range(0, floor2CombatRoomsIndex.Count);
-            rooms.Add(floor2CombatRoomsIndex[roomNumber]);
+            rooms.Add(Instantiate(floor2CombatRoomsIndex[roomNumber]));
         }
         else if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 2)
         {
             roomNumber = Random.Range(0, floor3CombatRoomsIndex.Count);
-            rooms.Add(floor3CombatRoomsIndex[roomNumber]);
+            rooms.Add(Instantiate(floor3CombatRoomsIndex[roomNumber]));
         }
         else
         {
             roomNumber = Random.Range(0, floor4CombatRoomsIndex.Count);
-            rooms.Add(floor4CombatRoomsIndex[roomNumber]);
+            rooms.Add(Instantiate(floor4CombatRoomsIndex[roomNumber]));
         }
     }
 
@@ -260,22 +261,22 @@ public class RoomManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 0)
         {
             roomNumber = Random.Range(0, floor1BossRoomsIndex.Count);
-            rooms.Add(floor1BossRoomsIndex[roomNumber]);
+            rooms.Add(Instantiate(floor1BossRoomsIndex[roomNumber]));
         }
         else if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 1)
         {
             roomNumber = Random.Range(0, floor2BossRoomsIndex.Count);
-            rooms.Add(floor2BossRoomsIndex[roomNumber]);
+            rooms.Add(Instantiate(floor2BossRoomsIndex[roomNumber]));
         }
         else if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 2)
         {
             roomNumber = Random.Range(0, floor3BossRoomsIndex.Count);
-            rooms.Add(floor3BossRoomsIndex[roomNumber]);
+            rooms.Add(Instantiate(floor3BossRoomsIndex[roomNumber]));
         }
         else
         {
             roomNumber = Random.Range(0, floor4BossRoomsIndex.Count);
-            rooms.Add(floor4BossRoomsIndex[roomNumber]);
+            rooms.Add(Instantiate(floor4BossRoomsIndex[roomNumber]));
         }
     }
 }

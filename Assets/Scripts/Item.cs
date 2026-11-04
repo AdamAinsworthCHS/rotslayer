@@ -15,6 +15,7 @@ public class Item : MonoBehaviour
 
     public string itemName;
     public string itemDescription;
+    public Sprite itemSprite;
     
     
     private float itemTextClock;
@@ -44,7 +45,6 @@ public class Item : MonoBehaviour
             {
                 itemTitle.text = "";
                 itemSubtitle.text = "";
-                Destroy(gameObject);
             }
         }
     }
@@ -60,7 +60,6 @@ public class Item : MonoBehaviour
                 textShown = true;
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = null;
                 roomManager.rooms[roomManager.position].treasureTaken = true;
-                Debug.Log(roomManager.rooms[roomManager.position].treasureTaken);
             }
         }
     }

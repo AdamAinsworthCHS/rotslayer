@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using UnityEngine;
 
@@ -9,9 +10,25 @@ public class RoomManager : MonoBehaviour
     public bool combat;
     public List<GameObject> currentEnemies;
     public int bossWave;
+    public GameObject blankPlayer;
+    private GameObject[] players;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // KILL THE CLONES!!!
+        players = GameObject.FindGameObjectsWithTag("Player");
+        if (players.Length != 1)
+        {
+            for (int i = 0; i < players.Length; i++)
+            {
+                if (players[i].GetComponent<ItemManager>().currentItems.Count == 0)
+                {
+                    Destroy(players[i]);
+                }
+            }
+        }
+        players[0].transform.position = transform.position;
+
         combat = false;
         for (int i = 0; i < rooms.Count; i++)
         {

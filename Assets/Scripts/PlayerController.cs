@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DontDestroyOnLoad(this.gameObject);
         if (Input.GetKey("w"))
         {
             if (transform.position.y < 4)

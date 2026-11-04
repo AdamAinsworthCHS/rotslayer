@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     public Vector2 endPos;
     public GameObject[] currentObjects;
     public GameObject[] currentItems;
+    public GameObject[] currentProjectiles;
 
     private TMPro.TextMeshProUGUI itemTitle;
     private TMPro.TextMeshProUGUI itemSubtitle;
@@ -66,6 +67,12 @@ public class Door : MonoBehaviour
         for (int i = 0; i < currentObjects.Length; i++)
         {
             Destroy(currentObjects[i]);
+        }
+
+        currentProjectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        for (int i = 0; i < currentProjectiles.Length; i++)
+        {
+            Destroy(currentProjectiles[i]);
         }
 
         currentItems = GameObject.FindGameObjectsWithTag("Item");

@@ -56,6 +56,10 @@ public class ItemManager : MonoBehaviour
         {
             currentSpecialAbilities.Add(newItem.specialAbility);
         }
+        if (newItem.healthBonus > 0)
+        {
+            this.gameObject.GetComponent<PlayerController>().health += newItem.healthBonus;
+        }
         this.gameObject.GetComponent<PlayerController>().RecalculateStats();
     }
 }

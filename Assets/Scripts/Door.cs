@@ -11,10 +11,15 @@ public class Door : MonoBehaviour
     public Vector2 endPos;
     public GameObject[] currentObjects;
     public GameObject[] currentItems;
+
+    private TMPro.TextMeshProUGUI itemTitle;
+    private TMPro.TextMeshProUGUI itemSubtitle;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         roomManager = GameObject.Find("RoomManager").GetComponent<RoomManager>();
+        itemTitle = GameObject.Find("ItemTitle").GetComponent<TMPro.TextMeshProUGUI>();
+        itemSubtitle = GameObject.Find("ItemSubtitle").GetComponent<TMPro.TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -29,6 +34,8 @@ public class Door : MonoBehaviour
         {
             if (roomManager.combat == false)
             {
+                itemTitle.text = "";
+                itemSubtitle.text = "";
                 if (doorID == "Exit")
                 {
                     if (roomManager.position > 0)

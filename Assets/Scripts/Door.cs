@@ -78,7 +78,10 @@ public class Door : MonoBehaviour
         currentItems = GameObject.FindGameObjectsWithTag("Item");
         for (int i = 0; i < currentItems.Length; i++)
         {
-            Destroy(currentItems[i]);
+            if (currentItems[i].GetComponent<Item>().collected == false)
+            {
+                Destroy(currentItems[i]);
+            }
         }
     }
 }

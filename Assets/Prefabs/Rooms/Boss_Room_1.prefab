@@ -55,6 +55,7 @@ MonoBehaviour:
   - {fileID: 759139620959273741, guid: ee9d49a4dc8746d4da30d299cc582778, type: 3}
   - {fileID: 759139620959273741, guid: ee9d49a4dc8746d4da30d299cc582778, type: 3}
   - {fileID: 759139620959273741, guid: ee9d49a4dc8746d4da30d299cc582778, type: 3}
+  - {fileID: 5725387874023699186, guid: 81b36df143297284fb0f1ae86f1e2472, type: 3}
   objectPositions:
   - {x: -3.5, y: 2.5}
   - {x: -1, y: 2.5}
@@ -62,6 +63,7 @@ MonoBehaviour:
   - {x: -3.5, y: -2.5}
   - {x: -1, y: -2.5}
   - {x: 3.5, y: -2.5}
+  - {x: 7, y: 0}
   roomType: Boss
   wave1:
   - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}

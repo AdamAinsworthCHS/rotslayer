@@ -3,10 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class Stairway : MonoBehaviour
 {
+    private RoomManager roomManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        roomManager = GameObject.Find("RoomManager").GetComponent<RoomManager>();
     }
 
     // Update is called once per frame
@@ -17,9 +18,12 @@ public class Stairway : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (roomManager.combat == false)
         {
-            SceneManager.LoadScene("FloorTransition");
+            if (collision.CompareTag("Player"))
+            {
+                SceneManager.LoadScene("FloorTransition");
+            }
         }
     }
 }

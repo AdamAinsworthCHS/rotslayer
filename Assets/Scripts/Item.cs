@@ -16,6 +16,9 @@ public class Item : MonoBehaviour
     public string itemName;
     public string itemDescription;
     public Sprite itemSprite;
+
+    [Header("Misc")]
+    public bool collected;
     
     
     private float itemTextClock;
@@ -32,6 +35,7 @@ public class Item : MonoBehaviour
         itemSubtitle = GameObject.Find("ItemSubtitle").GetComponent<TMPro.TextMeshProUGUI>();
         roomManager = GameObject.Find("RoomManager").GetComponent<RoomManager>();
         textShown = false;
+        collected = false;
     }
 
     // Update is called once per frame
@@ -47,6 +51,10 @@ public class Item : MonoBehaviour
                 itemSubtitle.text = "";
             }
         }
+        if (collected == true)
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -60,6 +68,7 @@ public class Item : MonoBehaviour
                 textShown = true;
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = null;
                 roomManager.rooms[roomManager.position].treasureTaken = true;
+                collected = true;
             }
         }
     }

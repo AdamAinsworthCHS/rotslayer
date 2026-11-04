@@ -1,30 +1,50 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 7.0f;
+    [Header("Stats")]
+    public float speed = 7.0f;
     public int health;
     public int maxHealth;
     public int ammo;
     public int maxAmmo;
+    public float fireDelay;
+    public float reloadDelay;
+
+    [Header("Components and Objects")]
     public GameObject bullet;
     private Animator playerAnimator;
+    private ItemManager itemManager;
 
     // clocks
     private float invincibilityClock = 0f;
     public float invincibilityTime = 1f;
     private float fireClock;
-    public float fireDelay;
     private float reloadClock;
-    public float reloadDelay;
+    
+
+    [Header("Baselines")]
+    public float baseSpeed = 7.0f;
+    public int baseMaxHealth = 6;
+    public int baseMaxAmmo = 12;
+    public float baseFireDelay = 0.05f;
+    public float baseReloadDelay = 0.3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        health = maxHealth;
-        ammo = maxAmmo;
         playerAnimator = this.GetComponent<Animator>();
+        itemManager = this.GetComponent<ItemManager>();
+
+        maxHealth = baseMaxHealth + itemManager.totalHealthBonus;
+        maxAmmo = baseMaxAmmo + itemManager.totalAmmoBonus;
+        speed = baseSpeed + itemManager.totalSpeedBonus;
+        fireDelay = baseFireDelay / ( 1 + itemManager.totalFireRateBonus);
+        reloadDelay = baseReloadDelay / ( 1 +itemManager.totalReloadBonus);
+
+        ammo = maxAmmo;
     }
 
     // Update is called once per frame
@@ -123,6 +143,17 @@ public class PlayerController : MonoBehaviour
                 GetComponent<SpriteRenderer>().color = Color.red;
             }
         }
+    }
+
+    public void RecalculateStats()
+    {
+        maxHealth = baseMaxHealth + itemManager.totalHealthBonus;
+        maxAmmo = baseMaxAmmo + itemManager.totalAmmoBonus;
+        speed = baseSpeed + itemManager.totalSpeedBonus;
+        fireDelay = baseFireDelay / ( 1 + itemManager.totalFireRateBonus);
+        reloadDelay = baseReloadDelay / ( 1 +itemManager.totalReloadBonus);
+
+        // health += itemManager.totalHealthBonus;
     }
 
 }

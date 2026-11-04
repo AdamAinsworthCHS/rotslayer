@@ -15,6 +15,7 @@ public class RoomManager : MonoBehaviour
         for (int i = 0; i < rooms.Count; i++)
         {
             rooms[i].cleared = false;
+            rooms[i].treasureTaken = false;
         }
     }
 
@@ -42,7 +43,17 @@ public class RoomManager : MonoBehaviour
         
         for (int i = 0; i < rooms[position].objects.Count; i++)
         {
-            GameObject clone = Instantiate(rooms[position].objects[i], rooms[position].objectPositions[i], transform.rotation);
+            if (rooms[position].objects[i].GetComponent<RandomItem>() != null)
+            {
+                if (rooms[position].treasureTaken == false)
+                {
+                    GameObject itemSpawner = Instantiate(rooms[position].objects[i], rooms[position].objectPositions[i], transform.rotation);
+                }
+            }
+            else
+            {
+                GameObject clone = Instantiate(rooms[position].objects[i], rooms[position].objectPositions[i], transform.rotation);
+            }
         }
     }
 }

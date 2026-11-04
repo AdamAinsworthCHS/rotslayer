@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     public Vector2 startPos;
     public Vector2 endPos;
     public GameObject[] currentObjects;
+    public GameObject[] currentItems;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,6 +59,12 @@ public class Door : MonoBehaviour
         for (int i = 0; i < currentObjects.Length; i++)
         {
             Destroy(currentObjects[i]);
+        }
+
+        currentItems = GameObject.FindGameObjectsWithTag("Item");
+        for (int i = 0; i < currentItems.Length; i++)
+        {
+            Destroy(currentItems[i]);
         }
     }
 }

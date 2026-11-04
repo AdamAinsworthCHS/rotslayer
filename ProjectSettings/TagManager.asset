@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Projectile
   - Object
+  - Item
   layers:
   - Default
   - TransparentFX

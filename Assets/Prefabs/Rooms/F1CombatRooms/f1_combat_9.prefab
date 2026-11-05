@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6449273929327431524}
   - component: {fileID: 3238390915992011914}
   m_Layer: 0
-  m_Name: empty_special
+  m_Name: f1_combat_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Room
   cleared: 0
   treasureTaken: 0
-  enemies: []
-  enemyPositions: []
+  enemies:
+  - {fileID: 5010767923384748841, guid: acc035726ce9ef34aa8e17f983af49a7, type: 3}
+  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
+  - {fileID: 5010767923384748841, guid: acc035726ce9ef34aa8e17f983af49a7, type: 3}
+  - {fileID: 5010767923384748841, guid: fcef526f87fa7f647a8d21294c83ef3a, type: 3}
+  - {fileID: 5010767923384748841, guid: acc035726ce9ef34aa8e17f983af49a7, type: 3}
+  enemyPositions:
+  - {x: 3, y: 3}
+  - {x: 3, y: 2}
+  - {x: 3, y: -2}
+  - {x: 3, y: 3}
+  - {x: 1, y: 3}
   objects: []
   objectPositions: []
   roomType: 

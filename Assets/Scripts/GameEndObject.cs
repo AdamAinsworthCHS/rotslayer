@@ -19,6 +19,11 @@ public class GameEndObject : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            for (int i = 0; i < collision.GetComponent<ItemManager>().currentItems.Count; i++)
+            {
+                Destroy(collision.GetComponent<ItemManager>().currentItems[i].gameObject);
+            }
+            Destroy(collision.gameObject);
             SceneManager.LoadScene("TitleScreen");
         }
     }

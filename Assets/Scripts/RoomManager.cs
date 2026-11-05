@@ -23,8 +23,6 @@ public class RoomManager : MonoBehaviour
     public List<Room> floor2BossRoomsIndex;
     public List<Room> floor3CombatRoomsIndex;
     public List<Room> floor3BossRoomsIndex;
-    public List<Room> floor4CombatRoomsIndex;
-    public List<Room> floor4BossRoomsIndex;
     public GameObject randomItem;
     private int roomNumber; // int used to select rooms
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,7 +53,12 @@ public class RoomManager : MonoBehaviour
         {
             rooms.Add(miscRoomsIndex[0]);
             AddTreasureRoom();
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 2; i++)
+            {
+                AddCombatRoom();
+            }
+            AddTreasureRoom();
+            for (int i = 0; i < 3; i++)
             {
                 AddCombatRoom();
             }
@@ -70,13 +73,13 @@ public class RoomManager : MonoBehaviour
                 AddCombatRoom();
             }
             AddTreasureRoom();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
                 AddCombatRoom();
             }
             AddTreasureRoom();
             AddSpecialRoom();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 AddCombatRoom();
             }
@@ -84,12 +87,17 @@ public class RoomManager : MonoBehaviour
             AddSpecialRoom();
             AddBossRoom();
         }
-        else if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 2)
+        else
         {
             rooms.Add(miscRoomsIndex[0]);
             AddCombatRoom();
             AddTreasureRoom();
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 3; i++)
+            {
+                AddCombatRoom();
+            }
+            AddSpecialRoom();
+            for (int i = 0; i < 2; i++)
             {
                 AddCombatRoom();
             }
@@ -98,34 +106,8 @@ public class RoomManager : MonoBehaviour
             {
                 AddCombatRoom();
             }
-            AddSpecialRoom();
-            for (int i = 0; i < 5; i++)
-            {
-                AddCombatRoom();
-            }
             AddTreasureRoom();
             for (int i = 0; i < 2; i++)
-            {
-                AddCombatRoom();
-            }
-            AddSpecialRoom();
-            AddBossRoom();
-        }
-        else
-        {
-            rooms.Add(miscRoomsIndex[0]);
-            AddTreasureRoom();
-            for (int i = 0; i < 8; i++)
-            {
-                AddCombatRoom();
-            }
-            AddSpecialRoom();
-            for (int i = 0; i < 9; i++)
-            {
-                AddCombatRoom();
-            }
-            AddTreasureRoom();
-            for (int i = 0; i < 7; i++)
             {
                 AddCombatRoom();
             }
@@ -249,15 +231,10 @@ public class RoomManager : MonoBehaviour
             roomNumber = Random.Range(0, floor2CombatRoomsIndex.Count);
             rooms.Add(Instantiate(floor2CombatRoomsIndex[roomNumber]));
         }
-        else if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 2)
+        else
         {
             roomNumber = Random.Range(0, floor3CombatRoomsIndex.Count);
             rooms.Add(Instantiate(floor3CombatRoomsIndex[roomNumber]));
-        }
-        else
-        {
-            roomNumber = Random.Range(0, floor4CombatRoomsIndex.Count);
-            rooms.Add(Instantiate(floor4CombatRoomsIndex[roomNumber]));
         }
     }
 
@@ -273,15 +250,10 @@ public class RoomManager : MonoBehaviour
             roomNumber = Random.Range(0, floor2BossRoomsIndex.Count);
             rooms.Add(Instantiate(floor2BossRoomsIndex[roomNumber]));
         }
-        else if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().floor == 2)
+        else
         {
             roomNumber = Random.Range(0, floor3BossRoomsIndex.Count);
             rooms.Add(Instantiate(floor3BossRoomsIndex[roomNumber]));
-        }
-        else
-        {
-            roomNumber = Random.Range(0, floor4BossRoomsIndex.Count);
-            rooms.Add(Instantiate(floor4BossRoomsIndex[roomNumber]));
         }
     }
 }

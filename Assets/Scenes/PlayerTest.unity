@@ -1263,14 +1263,38 @@ MonoBehaviour:
   - {fileID: 3238390915992011914, guid: 25be8c33cd154df498b0dd94b1d10607, type: 3}
   - {fileID: 3238390915992011914, guid: b7125a76deec60f4e8a2bf17ffa9ae42, type: 3}
   - {fileID: 3238390915992011914, guid: b3c2d6326d8942d4c8f2789d90fadde5, type: 3}
+  - {fileID: 3238390915992011914, guid: be421c02f3c7b674db8373b23cb3ebeb, type: 3}
+  - {fileID: 3238390915992011914, guid: 087287df56dfb1047ad73f9f308b8192, type: 3}
+  - {fileID: 3238390915992011914, guid: 77ca25011d53e814fbdf8491ad2f7b8c, type: 3}
+  - {fileID: 3238390915992011914, guid: e2f8fb8244408f640806b868a188f92b, type: 3}
+  - {fileID: 3238390915992011914, guid: 0a8225e21a45e744c8528ba6a52de054, type: 3}
+  - {fileID: 3238390915992011914, guid: 56a0f18ef57c75943967b105ed0591d5, type: 3}
   floor1BossRoomsIndex:
   - {fileID: 3238390915992011914, guid: ef260a7ad202cbe49a68c2c13e0236fe, type: 3}
-  floor2CombatRoomsIndex: []
-  floor2BossRoomsIndex: []
-  floor3CombatRoomsIndex: []
-  floor3BossRoomsIndex: []
-  floor4CombatRoomsIndex: []
-  floor4BossRoomsIndex: []
+  floor2CombatRoomsIndex:
+  - {fileID: 3238390915992011914, guid: 7e54369f7337eff45ae2282f09715f01, type: 3}
+  - {fileID: 3238390915992011914, guid: ef61366ee2ddb094ab21b445c853cf64, type: 3}
+  - {fileID: 3238390915992011914, guid: 0975e2cffb7e74f46bab861901435700, type: 3}
+  - {fileID: 3238390915992011914, guid: d42de09a57eeb864999a219288d1614d, type: 3}
+  - {fileID: 3238390915992011914, guid: 4a0a78a5a1694e94bbc5d6b15a1c0f02, type: 3}
+  - {fileID: 3238390915992011914, guid: 865300953ae5ca348a6248cb1cebc91d, type: 3}
+  - {fileID: 3238390915992011914, guid: 24479c3d097c82243aa6ab3c112dac94, type: 3}
+  - {fileID: 3238390915992011914, guid: 584404c998d0259438fd185cdcc94cae, type: 3}
+  - {fileID: 3238390915992011914, guid: c2ef8ef1bd3e44a4d9a8b777222bd0ff, type: 3}
+  floor2BossRoomsIndex:
+  - {fileID: 3238390915992011914, guid: 30f03861539fb6043b964dfbb07037a1, type: 3}
+  floor3CombatRoomsIndex:
+  - {fileID: 3238390915992011914, guid: f6c62044953b4b3428bd6a221c368d6a, type: 3}
+  - {fileID: 3238390915992011914, guid: 6f4642dd28d2c2e4faa7fe6d422cac4b, type: 3}
+  - {fileID: 3238390915992011914, guid: 2dabd8a5de5279c49a270389d00c719d, type: 3}
+  - {fileID: 3238390915992011914, guid: 0c5878ef1621fb547b92792b4f62bd54, type: 3}
+  - {fileID: 3238390915992011914, guid: 8d3b682fcc44cfa48b650a8c53dda19a, type: 3}
+  - {fileID: 3238390915992011914, guid: 7bdc0928ac6db324ab64d1fac9794724, type: 3}
+  - {fileID: 3238390915992011914, guid: e1839a31a5e58b44bb8e9915038b32e6, type: 3}
+  - {fileID: 3238390915992011914, guid: 908e98e46c48d1d4e987eeeaefe44354, type: 3}
+  - {fileID: 3238390915992011914, guid: 8238656017cbc7b45a3d51f667792d72, type: 3}
+  floor3BossRoomsIndex:
+  - {fileID: 3238390915992011914, guid: 0b4234722e465d04bbee753c9f0ffd8b, type: 3}
   randomItem: {fileID: 3377839355051805734, guid: fd3cd1b5208dabb40a870ad923a5495b, type: 3}
 --- !u!1 &1046889223
 GameObject:

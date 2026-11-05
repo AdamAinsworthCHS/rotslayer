@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef763603ae97c8149ad68d72f89f58e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  healthBonus: 4
+  healthBonus: 0
   ammoBonus: 0
   speedBonus: 0
   fireRateBonus: 0.4
